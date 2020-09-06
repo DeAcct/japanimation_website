@@ -143,23 +143,24 @@ h1:hover{
     backdrop-filter:blur(10px);
     background-color:rgba(0, 0, 0, 0.5)
 }
+
+
 .slider_wrap{
     width: 100%;
     height: 800px;
     position:relative;
     margin-bottom: 50px;
 }
-
-
 .slider_handler{
-    width: 1100px;
+    width: 100%;
     height: 800px;
     box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    overflow: hidden;
 }
 .slider_handler li{
     float: left;
     overflow: hidden;
-    width: 900px;
+    width: 80%;
     height: 800px;
     position:relative;
 }
@@ -192,13 +193,15 @@ h1:hover{
 .slider_handler li:nth-of-type(5):after{
     content:'수미';
 }
-.slider_handler li:not(:first-child),
+.slider_handler li:not(:first-child){
+    width: 5%;
+}
 .slider_handler li:not(:first-child) a{
-    width: 50px;
+    width: 100%;
 }
 .slider_handler li a{
     display: block;
-    width: 900px;
+    width: 100%;
     height: 800px;
     background:url(../img/slider_keyVisual.jpg) no-repeat center/cover;
     position:relative;
@@ -212,28 +215,6 @@ h1:hover{
     background-color:#fff;
     opacity:0;
     transition: 100ms ease-out;
-}
-.slider_handler li a.clicked{
-    animation: zoom 500ms ease-out forwards;
-}
-.slider_handler li a.not_clicked{
-    animation: out 500ms ease-out forwards;
-}
-@keyframes zoom{
-    0%{
-        transform: scale(1);
-    }
-    100%{
-        transform: scale(1.01);
-    }
-}
-@keyframes out{
-    0%{
-        transform: scale(1.1);
-    }
-    100%{
-        transform: scale(1);
-    }
 }
 .slider_handler li:nth-child(2) a{
     background-image: url(../img/slider_chizuru.jpg);
@@ -292,6 +273,10 @@ h1:hover{
 .info_wrap .btn{
     margin: 30px auto;
 }
+
+
+
+
 footer{
     width: 100%;
     height: 100px;

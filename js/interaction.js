@@ -3,20 +3,18 @@ $(function(){
         $('.slider_handler span').css({
             opacity:0
         })
-        $(this).parent().siblings().animate({
-            width: '50px'
-        },500)
-        $(this).parent().animate({
-            width:'900px'
-        },500)
-        $(this).animate({
-            width:'900px'
-        },500)
-        $(this).parent().siblings().children().animate({
-            width:'50px'
-        },500)
-        $(this).parent().siblings().children().addClass('not_clicked')
-        $(this).addClass('clicked').removeClass('not_clicked')
+        $(this).parent().siblings().animate({ //li
+            width: '5%'
+        },300)
+        $(this).parent().siblings().children().animate({ //a
+            width:'100%'
+        },0)
+        $(this).parent().animate({ //li
+            width:'80%'
+        },300)
+        $(this).animate({ //a
+            width:'100%'
+        },0)
         return false;
     })
     $('.slider_handler span').mouseenter(function(){
