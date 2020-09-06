@@ -1,5 +1,7 @@
 $(function(){
     $('.slider_handler a').click(function(){
+        $(this).parent().siblings().removeClass('on');
+        $(this).parent().addClass('on');
         $('.slider_handler span').css({
             opacity:0
         })
@@ -18,12 +20,11 @@ $(function(){
         return false;
     })
     $('.slider_handler span').mouseenter(function(){
-        var wid = $(this).width()
-        if (wid!=900){
-            $(this).animate({
-                opacity:0.3
-            },100)
-        }
+        var toggleCheck = $(this).parent().parent().hasClass('on')
+        if (toggleCheck==false)
+        $(this).animate({
+            opacity:0.3
+        },100)
     }).mouseleave(function(){
         $(this).animate({
             opacity:0
