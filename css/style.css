@@ -219,17 +219,8 @@ h1:hover{
     opacity:0;
     transition: 100ms ease-out;
 }
-.slider_handler li:nth-child(2) a{
+.slider_handler li:last-child a{
     background-image: url(../img/slider2.jpg);
-}
-.slider_handler li:nth-child(3) a{
-    background-image: url(../img/slider_mami.jpg);
-}
-.slider_handler li:nth-child(4) a{
-    background-image: url(../img/slider_ruka.jpg);
-}
-.slider_handler li:nth-child(5) a{
-    background-image: url(../img/slider_sumi.jpg);
 }
 .info_wrap{
     display: flex;
