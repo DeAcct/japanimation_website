@@ -6,12 +6,7 @@
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-	font-family: 'CD';
-	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff") format("woff");
-	font-weight: 300;
-}
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 
 
 h1,h2,h3,h4,h5,h6,
@@ -23,6 +18,7 @@ body, html{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 h1,h2,h3,h4,h5,h6{
     font-family: 'Cafe24_simple';
@@ -83,15 +79,18 @@ html {
 
 /*style*/
 .wrap{
+    display: flex;
     width: 100%;
     background-image: url(../img/bg_pattern.jpg);
     background-size: 2%;
 }
 
 header{
-    float:left;
+    position: fixed;
     width: 20%;
+    height: 100%;
     padding: 50px 20px 0 50px;
+    background-color:#fff;
 }
 h1{
     font-size: 5rem;
@@ -104,6 +103,7 @@ h1{
 h1 span{
     color:#ff0062;
     font-size: 2.5rem;
+    font-family: 'Cafe24_simple';
 }
 h1:hover{
     opacity: 0.6;
@@ -120,28 +120,41 @@ h1:hover{
 .header_wrap .gnb li a{
     text-transform: uppercase;
     font-size: 1.7rem;
-    font-family: "CD";
 }
 
-.slider{
-    float:left;
+.right{
     width: 80%;
+    margin-left: 20%;
+}
+.slider{
+    width: 100%;
     height: 800px;
     position:relative;
 }
-.slider h2{
+.slider .keyDescription{
     z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position:absolute;
-    right: 60px;
-    bottom: 150px;
-    
-    font-size: 4rem;
+    right: 0;
+    bottom: 0;
     color:#fff;
+    width: 100%;
     padding: 20px 30px;
-    line-height: 1.2;
-    font-family: 'Cafe24_simple';
     backdrop-filter:blur(10px);
-    background-color:rgba(0, 0, 0, 0.5)
+    -webkit-backdrop-filter:blur(10px);
+    background-color:rgba(0, 0, 0, 0.5);
+}
+.slider .keyDescription h2{
+    font-size: 4rem;
+}
+.slider .keyDescription p{
+    font-size: 1.5em;
+}
+.slider .keyDescription b{
+    font-family: 'Cafe24_simple';
+    font-weight: 900;
 }
 
 
@@ -154,18 +167,17 @@ h1:hover{
 .slider_handler{
     width: 100%;
     height: 800px;
-    box-shadow: 0 0 12px rgba(0,0,0,0.3);
     overflow: hidden;
 }
 .slider_handler li{
     float: left;
     overflow: hidden;
-    width: 80%;
+    width: 95%;
     height: 800px;
     position:relative;
 }
 .slider_handler li:after{
-    content:'key visual';
+    content:'visual 1';
     writing-mode: vertical-rl;
     text-align: center;
     color:#fff;
@@ -181,17 +193,8 @@ h1:hover{
     left:0;
     background-color:#ff0062;
 }
-.slider_handler li:nth-of-type(2):after{
-    content:'치즈루';
-}
-.slider_handler li:nth-of-type(3):after{
-    content:'마미';
-}
-.slider_handler li:nth-of-type(4):after{
-    content:'루카';
-}
-.slider_handler li:nth-of-type(5):after{
-    content:'수미';
+.slider_handler li:last-child::after{
+    content:'visual 2';
 }
 .slider_handler li:not(:first-child){
     width: 5%;
@@ -203,7 +206,7 @@ h1:hover{
     display: block;
     width: 100%;
     height: 800px;
-    background:url(../img/slider_keyVisual.jpg) no-repeat center/cover;
+    background:url(../img/slider1.jpg) no-repeat center/cover;
     position:relative;
 }
 .slider_handler li a span{
@@ -217,7 +220,7 @@ h1:hover{
     transition: 100ms ease-out;
 }
 .slider_handler li:nth-child(2) a{
-    background-image: url(../img/slider_chizuru.jpg);
+    background-image: url(../img/slider2.jpg);
 }
 .slider_handler li:nth-child(3) a{
     background-image: url(../img/slider_mami.jpg);
@@ -243,7 +246,7 @@ h1:hover{
     width: 40%;
     height: 370px;
     background-color:#fff;
-    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    box-shadow: 0 0 30px rgba(0,0,0,0.16);
     margin-right: 50px;
     border-radius: 10px;
     padding: 20px 30px;
@@ -264,11 +267,9 @@ h1:hover{
     color:#ff0062;
     font-size: 1.5rem;
     font-weight: normal;
-    font-family: 'CD';
 }
 .info_wrap a p{
     font-size: 1.7rem;
-    font-family: 'CD';
 }
 .info_wrap .btn{
     margin: 30px auto;

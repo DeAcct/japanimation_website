@@ -12,7 +12,7 @@ $(function(){
             width:'100%'
         },0)
         $(this).parent().animate({ //li
-            width:'80%'
+            width:'95%'
         },300)
         $(this).animate({ //a
             width:'100%'
