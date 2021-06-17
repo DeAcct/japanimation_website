@@ -1,6 +1,6 @@
 $(function () {
   var $slider = $(".slider_handler");
-  var slides = $(".slider_handler").children().length;
+  var slides = $slider.children().length;
   var disableWidth = 5;
   $slider.find("a").click(function () {
     $slider.find("li").removeClass("on");
