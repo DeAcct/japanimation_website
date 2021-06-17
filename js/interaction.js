@@ -1,5 +1,6 @@
 $(function () {
   var $slider = $(".slider_handler");
+  var slides = $(".slider_handler").children().length;
   $slider.find("a").click(function () {
     $slider.find("li").removeClass("on");
     $(this).parent().addClass("on");
@@ -13,13 +14,15 @@ $(function () {
       },
       300
     );
-    $(this).parent().animate(
-      {
-        //li
-        width: "95%",
-      },
-      300
-    );
+    $(this)
+      .parent()
+      .animate(
+        {
+          //li
+          width: 100 - 5 * (slides - 1) + "%",
+        },
+        300
+      );
     return false;
   });
   $slider
