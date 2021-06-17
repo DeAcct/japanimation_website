@@ -1,25 +1,29 @@
 $(function () {
   var $slider = $(".slider_handler");
   var slides = $(".slider_handler").children().length;
+  var disableWidth = 5;
   $slider.find("a").click(function () {
     $slider.find("li").removeClass("on");
     $(this).parent().addClass("on");
     $slider.find("span").css({
       opacity: 0,
     });
-    $(this).parent().siblings().animate(
-      {
-        //li
-        width: "5%",
-      },
-      300
-    );
+    $(this)
+      .parent()
+      .siblings()
+      .animate(
+        {
+          //li
+          width: disableWidth + "%",
+        },
+        300
+      );
     $(this)
       .parent()
       .animate(
         {
           //li
-          width: 100 - 5 * (slides - 1) + "%",
+          width: 100 - disableWidth * (slides - 1) + "%",
         },
         300
       );
